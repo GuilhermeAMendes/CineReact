@@ -1,3 +1,11 @@
+:root{
+  --color-1 : #f6f7fa;
+  --color-2 : #6859cc;
+  --color-3 : #d4d16e;
+  --color-4 : #1f1f26;
+
+}
+
 *{
   padding: 0;
   margin: 0;
@@ -5,7 +13,7 @@
 }
 
 body{
-  font-family: sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .app{

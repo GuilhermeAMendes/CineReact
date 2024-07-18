@@ -4,9 +4,8 @@ import "./style.css";
 function Header() {
   return (
     <header>
-      <h1>CineReact</h1>
-      <Link to="/">Home</Link>
-      <Link to="/Film">Filmes</Link>
+      <Link to="/" className="logo">CineReact</Link>
+      <Link to="/Favorite" className="favorite">Meus Filmes</Link>
     </header>
   );
 }
