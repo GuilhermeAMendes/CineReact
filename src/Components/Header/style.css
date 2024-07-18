@@ -29,7 +29,7 @@ header a {
   transition: all ease-in-out 0.25s;
 }
 
-.favorite:hover{
-    background-color: var(--color-2);
-    color: var(--color-1);
+.favorite:hover {
+  background-color: var(--color-2);
+  color: var(--color-1);
 }

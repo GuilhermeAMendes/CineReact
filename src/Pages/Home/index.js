@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import api from "../../services/api";
+import "./style.css";
 
 function Home() {
   const [films, setFilms] = useState([]);
@@ -14,7 +16,7 @@ function Home() {
             page: 1,
           },
         });
-        setFilms(response.data.results || []);
+        setFilms(response.data.results.slice(0, 10) || []);
       } catch (e) {
         console.log(
           `Ocorreu um erro ao tentar consumir os dados da API\nErro ${e.name}: ${e.message}`
@@ -25,14 +27,28 @@ function Home() {
   }, []);
 
   return (
-    <div>
-      {films.map(item => {
-        return (
-          <div key={item.id}>
-            <h1>{item.title}</h1>
-          </div>
-        );
-      })}
+    <div className="container">
+      <div className="filmsList">
+        {films.map((item) => {
+          return (
+            <div key={item.id} className="cardFilm">
+              <article>
+                <img
+                  src={`https://image.tmdb.org/t/p/original/${item.poster_path}`}
+                  alt="capa do filme"
+                  className="poster"
+                ></img>
+                <div className="filmDetails">
+                  <strong className="title">{item.title}</strong>
+                  <Link to={`/film/${item.id}`} className="btn">
+                    Ver mais...
+                  </Link>
+                </div>
+              </article>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
