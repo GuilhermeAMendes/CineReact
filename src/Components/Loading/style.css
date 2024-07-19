@@ -1,0 +1,96 @@
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8vh;
+  font-size: larger;
+}
+
+.loading h2 {
+font-size: 2rem;
+  margin-bottom: 8vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.loading h2::after{
+    content: "Carregando filmes";
+    animation: loading 2s steps(3, end) infinite;
+    position: absolute;
+    
+}
+
+.skeletonCard {
+  display: flex;
+  flex-direction: column;
+  width: 15.625rem;
+  margin-top: 8vh;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+  margin-bottom: 30px;
+  border-radius: 10px;
+}
+
+.skeletonDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  flex-grow: 1;
+  margin-bottom: 60px;
+}
+
+.skeletonPoster {
+  width: 15.625rem;
+  height: 18.75rem;
+  border-radius: 10px 10px 0 0;
+  background: linear-gradient(45deg, #eeedf2, #e0e0e0, #cfcfcf);
+  background-size: 200% 100%;
+  animation: skeleton 3s linear infinite;
+}
+
+.skeletonTitle {
+  width: 100%;
+  height: 1.875rem;
+  background: linear-gradient(45deg, #eeedf2, #e0e0e0, #cfcfcf);
+  background-size: 200% 100%;
+  animation: skeleton 3s linear infinite;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+@keyframes skeleton {
+  0% {
+    background-position-x: 200%;
+  }
+  100% {
+    background-position-x: -200%;
+  }
+}
+
+@keyframes loading{
+    0%{
+        content: "Carregando filmes";
+    }
+    33%{
+        content: "Carregando filmes.";
+    }
+    66%{
+        content: "Carregando filmes..";
+    }
+    100%{
+        content: "Carregando filmes...";
+    }
+}

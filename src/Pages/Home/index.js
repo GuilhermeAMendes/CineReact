@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import api from "../../services/api";
+import Loading from "../../Components/Loading";
 import "./style.css";
 
 function Home() {
   const [films, setFilms] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const loadFilms = async () => {
@@ -17,6 +19,7 @@ function Home() {
           },
         });
         setFilms(response.data.results || []);
+        setLoading(false);
       } catch (e) {
         console.log(
           `Ocorreu um erro ao tentar consumir os dados da API\nErro ${e.name}: ${e.message}`
@@ -25,6 +28,12 @@ function Home() {
     };
     loadFilms();
   }, []);
+
+  if(loading){
+    return(
+      <Loading/>
+    );
+  }
 
   return (
     <div className="container">
