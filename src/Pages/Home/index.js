@@ -16,7 +16,7 @@ function Home() {
             page: 1,
           },
         });
-        setFilms(response.data.results.slice(0, 10) || []);
+        setFilms(response.data.results || []);
       } catch (e) {
         console.log(
           `Ocorreu um erro ao tentar consumir os dados da API\nErro ${e.name}: ${e.message}`
