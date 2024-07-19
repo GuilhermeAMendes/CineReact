@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import api from "../../services/api";
 import Loading from "../../Components/Loading";
+import Card from "../../Components/Card";
 import "./style.css";
 
 function Home() {
@@ -29,35 +29,13 @@ function Home() {
     loadFilms();
   }, []);
 
-  if(loading){
-    return(
-      <Loading/>
-    );
+  if (loading) {
+    return <Loading />;
   }
 
   return (
     <div className="container">
-      <div className="filmsList">
-        {films.map((item) => {
-          return (
-            <div key={item.id} className="cardFilm">
-              <article>
-                <img
-                  src={`https://image.tmdb.org/t/p/original/${item.poster_path}`}
-                  alt="capa do filme"
-                  className="poster"
-                ></img>
-                <div className="filmDetails">
-                  <strong className="title">{item.title}</strong>
-                  <Link to={`/film/${item.id}`} className="btn">
-                    Ver mais...
-                  </Link>
-                </div>
-              </article>
-            </div>
-          );
-        })}
-      </div>
+      <Card item={films} />
     </div>
   );
 }
