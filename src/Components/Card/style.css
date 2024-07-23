@@ -1,74 +1,74 @@
 .filmsList {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-  }
-  
-  .cardFilm {
-    display: flex;
-    flex-direction: column;
-    width: 15.625rem;
-    background-color: var(--color-1);
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .cardFilm:hover {
-    transform: translateY(-10px);
-  }
-  
-  article {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    flex-grow: 1;
-    margin-bottom: 30px;
-    border-radius: 10px;
-    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.199);
-    cursor: pointer;
-  }
-  
-  .filmDetails {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.63);
-    border-top: none;
-    border-radius: 0px 0px 10px 10px;
-    flex-grow: 1;
-  }
-  
-  .poster {
-    width: 100%;
-    border-radius: 10px 10px 0px 0px;
-  }
-  
-  .title {
-    width: 100%;
-    font-size: 20px;
-    text-align: center;
-    word-wrap: break-word;
-  }
-  
-  .btn {
-    background-color: var(--color-1);
-    border: 3px solid var(--color-2);
-    border-radius: 5px;
-    color: var(--color-4);
-    padding: 5px;
-    margin: 40px 10px 20px 10px;
-    font-size: 15px;
-    font-weight: bold;
-    text-decoration: none;
-    transition: all ease-in-out 0.25s;
-  }
-  
-  .btn:hover {
-    background-color: var(--color-2);
-    border: 3px solid var(--color-1);
-    color: var(--color-1);
-  }
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.cardFilm {
+  display: flex;
+  flex-direction: column;
+  width: 15.625rem;
+  background-color: var(--color-1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.cardFilm:hover {
+  transform: translateY(-10px);
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.199);
+  cursor: pointer;
+}
+
+.filmDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.63);
+  border-top: none;
+  border-radius: 0px 0px 10px 10px;
+  flex-grow: 1;
+}
+
+.poster {
+  width: 100%;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.title {
+  width: 100%;
+  font-size: 20px;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.btn {
+  background-color: var(--color-1);
+  border: 3px solid var(--color-2);
+  border-radius: 5px;
+  color: var(--color-4);
+  padding: 5px;
+  margin: 40px 10px 20px 10px;
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all ease-in-out 0.25s;
+}
+
+.btn:hover {
+  background-color: var(--color-2);
+  border: 3px solid var(--color-1);
+  color: var(--color-1);
+}

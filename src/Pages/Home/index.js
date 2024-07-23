@@ -30,7 +30,10 @@ function Home() {
   }, []);
 
   if (loading) {
-    return <Loading />;
+    const loadingComponents = Array.from({ length: 20 }, (_, index) => (
+      <Loading key={index} />
+    ));
+    return <>{loadingComponents}</>;
   }
 
   return (

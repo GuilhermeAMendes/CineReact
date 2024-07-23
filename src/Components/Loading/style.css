@@ -1,4 +1,3 @@
-
 .loading {
   display: flex;
   flex-direction: column;
@@ -9,7 +8,7 @@
 }
 
 .loading h2 {
-font-size: 2rem;
+  font-size: 2rem;
   margin-bottom: 8vh;
   display: flex;
   justify-content: center;
@@ -17,11 +16,10 @@ font-size: 2rem;
   position: relative;
 }
 
-.loading h2::after{
-    content: "Carregando filmes";
-    animation: loading 2s steps(3, end) infinite;
-    position: absolute;
-    
+.loading h2::after {
+  content: "Carregando filme";
+  animation: loading 2s steps(3, end) infinite;
+  position: absolute;
 }
 
 .skeletonCard {
@@ -80,17 +78,17 @@ article {
   }
 }
 
-@keyframes loading{
-    0%{
-        content: "Carregando filmes";
-    }
-    33%{
-        content: "Carregando filmes.";
-    }
-    66%{
-        content: "Carregando filmes..";
-    }
-    100%{
-        content: "Carregando filmes...";
-    }
+@keyframes loading {
+  0% {
+    content: "Carregando filme";
+  }
+  33% {
+    content: "Carregando filme.";
+  }
+  66% {
+    content: "Carregando filme..";
+  }
+  100% {
+    content: "Carregando filme...";
+  }
 }
