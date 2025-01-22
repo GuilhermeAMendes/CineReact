@@ -1,15 +1,24 @@
-import React, {useState, useEffect} from "react";
+import useFetchFavorites from "../../hooks/useFetchFavorites";
 
-function Favorite(){
-    const [favorites, setFavorites] = useState([]);
+export default function Favorite() {
+  const favorites = JSON.parse(localStorage.getItem("favoriteMovies")) || [];
 
-    useEffect(() => {
-        
-    }, []);
+  const { favoritesInformation } = useFetchFavorites(favorites);
 
   return (
-    <div>Favorite</div>
-  )
+    <div>
+      <h1>Meus filmes favoritos</h1>
+      {favoritesInformation.length > 0 ? (
+        <ul>
+          {favoritesInformation.map((movie) => (
+            <li key={movie.id}>
+              <h3>{movie.title}</h3>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p>Você ainda não favoritou nenhum filme.</p>
+      )}
+    </div>
+  );
 }
-
-export default Favorite;

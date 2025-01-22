@@ -1,18 +1,29 @@
-import { useState } from "react";
 import { useParams } from "react-router-dom";
 import LoadingDetails from "../../Components/LoadingDetails";
 import "./style.css";
 import useFetchMovie from "../../hooks/useFetchMovies";
 import useFetchTrailers from "../../hooks/useFetchTrailers";
 
-function Film() {
-  const [favorite, setFavorite] = useState("");
-
+export default function Film() {
   const { id } = useParams();
   const { movies, isLoading } = useFetchMovie(id);
   const { trailers } = useFetchTrailers(id);
 
-  if (isLoading) return <LoadingDetails/>
+  const handleSaveMovie = () => {
+    const favorites = JSON.parse(localStorage.getItem("favoriteMovies")) || [];
+
+    const hasMovies = favorites.some((fav) => fav === movies.id);
+    if (hasMovies) {
+      alert("esse filme já está na lista")
+      return
+    };
+
+    const updatedFavorites = [...favorites, id];
+    localStorage.setItem("favoriteMovies", JSON.stringify(updatedFavorites));
+    console.log("to tentando salvar lek");
+  };
+
+  if (isLoading) return <LoadingDetails />;
 
   return (
     <div className="container">
@@ -27,7 +38,7 @@ function Film() {
             src="/images/heart.png"
             alt="icone de coração"
             className="favoriteIcon"
-            onClick={() => setFavorite(id)}
+            onClick={handleSaveMovie}
           ></img>
         </div>
         <div className="detailsFilm">
@@ -53,5 +64,3 @@ function Film() {
     </div>
   );
 }
-
-export default Film;

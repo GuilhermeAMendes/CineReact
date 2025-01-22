@@ -26,10 +26,12 @@
   padding: 20px 0px;
   background-color: var(--primary-color);
   margin: 10px;
+  text-align: justify;
+  width: 90%;
 }
 
 .posterDetails {
-  width: 100%;
+  width: 90%;
   border-radius: 10px;
   transition: transform 0.3s ease-in-out;
   display: flex;
@@ -45,17 +47,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 60px;
-  height: 60px;
+  width: 3rem;
+  height: 3rem;
   z-index: 1;
   position: absolute;
-  right: 20px;
+  right: 1.75rem;
   top: 115px;
 }
 
 .favoriteIcon{
-  width: 30px;
-  height: 30px;
+  width: 1.5rem;
+  height: 1.5rem;
   cursor: pointer;
 }
 
