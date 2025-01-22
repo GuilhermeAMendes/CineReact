@@ -22,7 +22,7 @@ export default function useFetchFavorites(favorites) {
     }
 
     const { data } = useSWR(`/movie/`, loadFavorites, {
-        revalidateOnFocus: false
+        revalidateOnFocus: true
     });
 
     return {

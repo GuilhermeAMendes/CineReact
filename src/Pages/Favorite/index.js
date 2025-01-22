@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import useFetchFavorites from "../../hooks/useFetchFavorites";
 import "./styles.css";
+import { toast } from "react-toastify";
 
 export default function Favorite() {
   let favorites = JSON.parse(localStorage.getItem("favoriteMovies")) || [];
@@ -10,6 +11,7 @@ export default function Favorite() {
   const handleExcludeFavoriteMovie = (id) => {
     favorites = favorites.filter((fav) => fav != id);
     localStorage.setItem("favoriteMovies", JSON.stringify(favorites));
+    toast.success("Favorito removido com sucesso!");
   };
 
   return (

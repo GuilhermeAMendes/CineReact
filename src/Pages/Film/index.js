@@ -3,6 +3,7 @@ import LoadingDetails from "../../Components/LoadingDetails";
 import "./style.css";
 import useFetchMovie from "../../hooks/useFetchMovies";
 import useFetchTrailers from "../../hooks/useFetchTrailers";
+import { toast } from "react-toastify";
 
 export default function Film() {
   const { id } = useParams();
@@ -20,7 +21,7 @@ export default function Film() {
 
     const updatedFavorites = [...favorites, id];
     localStorage.setItem("favoriteMovies", JSON.stringify(updatedFavorites));
-    console.log("to tentando salvar lek");
+    toast.success("Filme salvo com sucesso!");
   };
 
   if (isLoading) return <LoadingDetails />;
