@@ -2,47 +2,115 @@
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  /* padding: 20px; */
+  /* gap: 20px; */
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: var(--body-color);
+  border-radius: 10px;
 }
 
 .detailsCardContainer {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  padding: 20px 0px;
+  background-color: var(--highlight-color);
+}
+
+.detailsFilm {
+  padding: 20px 0px;
+  background-color: var(--primary-color);
+  margin: 10px;
+}
+
+.posterDetails {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+}
+
+.posterDetails:hover {
+  transform: translateY(-10px);
+}
+
+.favoriteContainerButton{
+  background-color: var(--color-1);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  z-index: 1;
+  position: absolute;
+  right: 20px;
+  top: 115px;
+}
+
+.favoriteIcon{
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.average{
+  margin: 20px 0px;
+  font-size: bold;
+}
+
+.title {
+  font-size: 2rem;
+  color: var(--text-color-1);
+  margin-bottom: 10px;
 }
 
 .videoContainer {
   display: flex;
   flex-wrap: wrap;
-  border: 2px solid black;
-  border-radius: 10px;
   gap: 20px;
   justify-content: space-evenly;
   align-items: center;
-  width: 80%;
-  padding: 20px;
+  background-color: var(--highlight-color-2);
+  border-radius: 10px;
 }
-
-/* .videoList{
-    margin-left: 20px;
-} */
 
 .video {
-  border: 0px;
+  border: 0;
   border-radius: 10px;
-  width: 25vw;
-  height: 35vh;
+  width: 100%;
+  height: 50vh;
 }
 
-@media screen and (max-width: 768px) {
-    .videoContainer {
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      padding: 10px;
-      background-color: aqua;
-    }
-  
-    .video {
-      width: 80vw; 
-      height: 80vh; 
-    }
+.videoList {
+   width: 100%;
+   .iframe {
+    width: 100%;
+   }
+}
+
+@media screen and (max-width: 1440px) {
+  .detailsCardContainer {
+    flex-direction: column;
+    gap: 10px;
   }
+
+  .videoContainer {
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--highlight-color);
+  }
+}
+
+@media screen and (min-width: 768px){
+  .videoContainer {
+    flex-direction: row;
+    width: 100%;
+    background-color: var(--highlight-color);
+  }
+}
